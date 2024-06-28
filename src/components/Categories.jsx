@@ -17,9 +17,9 @@ export default function Categories() {
   }, []);
 
   return (
-    <div className="w-full h-[110%] bg-neutral-900 flex justify-center items-start overflow-y overflow-x-hidden">
+    <div className={`w-full ${windowWidth <= 890 ? ' h-[160%]' : windowWidth <= 1680 ? ' h-[110%]' : 'h-[80%]'} bg-neutral-900 flex justify-center items-start overflow-y overflow-x-hidden`}>
       <div className="mt-12">
-        <div className={`grid gap-4 ${windowWidth <= 890 ? 'grid-cols-1' : windowWidth <= 1680 ? 'grid-cols-2' : 'grid-cols-4'} justify-center items-center`}>
+        <div className={`grid gap-4 ${windowWidth <= 890 ? 'grid-cols-1' : windowWidth <= 1680 ? 'grid-cols-2 ' : 'grid-cols-4'} justify-center items-center`}>
           <div className="bg-yellow-400 w-[400px] h-[320px]"></div>
           <div className="bg-yellow-500 w-[400px] h-[320px]"></div>
           <div className="bg-yellow-600 w-[400px] h-[320px]"></div>
