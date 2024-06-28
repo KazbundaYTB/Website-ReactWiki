@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FiMenu, FiX } from "react-icons/fi"; // Importing the FiMenu and FiX icons from react-icons
 
 export default function Categories() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
