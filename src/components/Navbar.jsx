@@ -32,9 +32,10 @@ export default function Navbar() {
     <div className="w-full h-[10%] bg-neutral-800 flex justify-between items-center">
       <div className="pl-4 ml-16">
         <h1 className="text-white text-lg font-bold">Logo</h1>
+        <h1 className="text-white text-lg font-bold">{windowWidth}</h1>
       </div>
       <div className="pr-4 mr-16">
-        {windowWidth <= 650 ? (
+        {windowWidth <= 850 ? (
           isSidebarOpen ? (
             <FiX
               className="text-white cursor-pointer invisible"
@@ -67,7 +68,7 @@ export default function Navbar() {
         )}
       </div>
       {/* Sidebar */}
-      {windowWidth <= 500 && isSidebarOpen && (
+      {windowWidth <= 850 && isSidebarOpen && (
         <div className="fixed top-0 right-0 h-full w-64 bg-neutral-900 bg-opacity-45 z-50">
           {/* Close button */}
           <div className="flex justify-end p-4">

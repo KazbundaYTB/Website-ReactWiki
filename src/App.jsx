@@ -5,7 +5,7 @@ import Footer from "./components/Footer"
 
 export default function App() {
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen overflow-x-hidden">
 
         <Navbar />
         <Categories />    
