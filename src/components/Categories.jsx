@@ -72,9 +72,9 @@ export default function Categories() {
             <div className="bg-gray-700 w-[90%] h-[65%] mt-3 mb-3 flex flex-col justify-center mx-auto rounded-l">
               <div className="w-full h-[320px] gap-0.5 flex flex-col">
                 {minecraftPosts.map((post, index) => (
-                  <div key={index} className="bg-gray-900 w-full h-[55px] rounded-l flex justify-between items-center px-2">
+                  <div key={index} className="bg-gray-900 w-full h-[55px] rounded flex justify-between items-center px-2">
                     <h1 className="font-bold text-lg text-white">{post.title}</h1>
-                    <Link to={`/minecraft/${post.id}`} className="bg-green-700 rounded-full px-2 py-2">
+                    <Link to={`/minecraft/${post.id}`} className="bg-gray-700 text-white rounded-full px-2 py-2 hover:-translate-y-1 hover:transition-transform">
                       <GoArrowRight />
                     </Link>
                   </div>
@@ -91,9 +91,9 @@ export default function Categories() {
             <div className="bg-gray-700 w-[90%] h-[65%] mt-3 mb-3 flex flex-col justify-center mx-auto rounded-l">
               <div className="w-full h-[320px] gap-0.5 flex flex-col">
                 {webhostPosts.map((post, index) => (
-                  <div key={index} className="bg-gray-900 w-full h-[55px] rounded-l flex justify-between items-center px-2">
+                  <div key={index} className="bg-gray-900 w-full h-[55px] rounded flex justify-between items-center px-2">
                     <h1 className="font-bold text-lg text-white">{post.title}</h1>
-                    <Link to={`/webhost/${post.id}`} className="bg-green-700 rounded-full px-2 py-2">
+                    <Link to={`/webhost/${post.id}`} className="bg-gray-700 text-white rounded-full px-2 py-2 hover:-translate-y-1 hover:transition-transform">
                       <GoArrowRight />
                     </Link>
                   </div>
@@ -110,9 +110,9 @@ export default function Categories() {
             <div className="bg-gray-700 w-[90%] h-[65%] mt-3 mb-3 flex flex-col justify-center mx-auto rounded-l">
               <div className="w-full h-[320px] gap-0.5 flex flex-col">
                 {databasePosts.map((post, index) => (
-                  <div key={index} className="bg-gray-900 w-full h-[55px] rounded-l flex justify-between items-center px-2">
+                  <div key={index} className="bg-gray-900 w-full h-[55px] rounded flex justify-between items-center px-2">
                     <h1 className="font-bold text-lg text-white">{post.title}</h1>
-                    <Link to={`/databaze/${post.id}`} className="bg-green-700 rounded-full px-2 py-2">
+                    <Link to={`/databaze/${post.id}`} className="bg-gray-700 text-white rounded-full px-2 py-2 hover:-translate-y-1 hover:transition-transform">
                       <GoArrowRight />
                     </Link>
                   </div>
