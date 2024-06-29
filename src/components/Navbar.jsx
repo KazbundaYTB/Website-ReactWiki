@@ -52,16 +52,16 @@ export default function Navbar() {
           // Render regular nav links for larger screens
           <ul className="flex flex-row gap-5 text-white">
             <li>
-              <a href="#">Domov</a>
+              <a href="/">Domov</a>
             </li>
             <li>
-              <a href="#">Minecraft</a>
+              <a href="/">Minecraft</a>
             </li>
             <li>
-              <a href="#">Webhost</a>
+              <a href="/">Webhost</a>
             </li>
             <li>
-              <a href="#">Databáze</a>
+              <a href="/">Databáze</a>
             </li>
           </ul>
         )}
@@ -80,16 +80,16 @@ export default function Navbar() {
           {/* Menu items */}
           <ul className="py-4">
             <li className="text-white text-lg py-2 px-4 bg-opacity-10 cursor-pointer">
-              <a href="http://">Menu Item 1</a>
+              <a href="/">Domov</a>
             </li>
             <li className="text-white text-lg py-2 px-4 cursor-pointer">
-              <a href="http://">Menu Item 2</a>
+              <a href="/">Minecraft</a>
             </li>
             <li className="text-white text-lg py-2 px-4 cursor-pointer">
-              <a href="http://">Menu Item 3</a>
+              <a href="/">Webhost</a>
             </li>
             <li className="text-white text-lg py-2 px-4 cursor-pointer">
-              <a href="http://">Menu Item 4</a>
+              <a href="/">Databáze</a>
             </li>
           </ul>
         </div>
