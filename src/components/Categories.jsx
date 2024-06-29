@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
+import { collection, query, orderBy, limit, onSnapshot } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 
 export default function Categories() {
@@ -37,7 +37,7 @@ export default function Categories() {
 
   const loadPosts = (collectionName, setPosts) => {
     const postsCollection = collection(db, collectionName);
-    const postsQuery = query(postsCollection, orderBy("timestamp", "desc"));
+    const postsQuery = query(postsCollection, orderBy("timestamp", "desc"), limit(4));
 
     const unsubscribe = onSnapshot(postsQuery, (snapshot) => {
       const postsList = snapshot.docs.map((doc) => doc.data());
@@ -68,16 +68,15 @@ export default function Categories() {
           } justify-center items-center`}
         >
           {/* Minecraft Posts */}
-          <div className="bg-gray-800 w-[400px] h-[420px] rounded-xl overflow-hidden">
+          <div className="bg-gray-800 w-[400px] h-[330px] rounded-xl overflow-hidden">
             <div className="bg-gray-700 w-full h-[70px] rounded-t-xl flex justify-center items-center">
               <h1 className="font-bold text-xl text-white">Minecraft</h1>
             </div>
-            <div className="bg-gray-700 w-[90%] h-[75%] mt-3 mb-3 flex justify-center mx-auto rounded-l overflow-y-scroll">
+            <div className="bg-gray-700 w-[90%] h-[65%] mt-3 mb-3 flex justify-center mx-auto rounded-l">
               <div className="w-full h-[320px] gap-0.5 flex flex-col">
                 {minecraftPosts.map((post, index) => (
                   <div key={index} className="bg-gray-900 w-full h-[55px] rounded-l flex flex-col justify-center items-center">
                     <h1 className="font-bold text-xl text-white">{post.title}</h1>
-                    <h1 className="text-xl text-white"> </h1>
                   </div>
                 ))}
               </div>
@@ -85,16 +84,15 @@ export default function Categories() {
           </div>
 
           {/* Webhost Posts */}
-          <div className="bg-gray-800 w-[400px] h-[420px] rounded-xl overflow-hidden">
+          <div className="bg-gray-800 w-[400px] h-[330px] rounded-xl overflow-hidden">
             <div className="bg-gray-700 w-full h-[70px] rounded-t-xl flex justify-center items-center">
               <h1 className="font-bold text-xl text-white">Webhost</h1>
             </div>
-            <div className="bg-gray-700 w-[90%] h-[75%] mt-3 mb-3 flex justify-center mx-auto rounded-l overflow-y-scroll">
+            <div className="bg-gray-700 w-[90%] h-[6%] mt-3 mb-3 flex justify-center mx-auto rounded-l">
               <div className="w-full h-[320px] gap-0.5 flex flex-col">
                 {webhostPosts.map((post, index) => (
                   <div key={index} className="bg-gray-900 w-full h-[55px] rounded-l flex flex-col justify-center items-center">
                     <h1 className="font-bold text-xl text-white">{post.title}</h1>
-                    {/* <h1 className="text-xl text-white">{post.content}</h1> */}
                   </div>
                 ))}
               </div>
@@ -102,28 +100,27 @@ export default function Categories() {
           </div>
 
           {/* Database Posts */}
-          <div className="bg-gray-800 w-[400px] h-[420px] rounded-xl overflow-hidden">
+          <div className="bg-gray-800 w-[400px] h-[330px] rounded-xl overflow-hidden">
             <div className="bg-gray-700 w-full h-[70px] rounded-t-xl flex justify-center items-center">
               <h1 className="font-bold text-xl text-white">Databáze</h1>
             </div>
-            <div className="bg-gray-700 w-[90%] h-[75%] mt-3 mb-3 flex justify-center mx-auto rounded-l overflow-y-scroll">
-            <div className="w-full h-[320px] gap-0.5 flex flex-col">
+            <div className="bg-gray-700 w-[90%] h-[65%] mt-3 mb-3 flex justify-center mx-auto rounded-">
+              <div className="w-full h-[320px] gap-0.5 flex flex-col">
                 {databasePosts.map((post, index) => (
-                   <div key={index} className="bg-gray-900 w-full h-[55px] rounded-l flex flex-col justify-center items-center">
+                  <div key={index} className="bg-gray-900 w-full h-[55px] rounded-l flex flex-col justify-center items-center">
                     <h1 className="font-bold text-xl text-white">{post.title}</h1>
-                    {/* <h1 className="text-xl text-white">{post.content}</h1> */}
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Placeholder for Future */}
-          <div className="bg-gray-800 w-[400px] h-[420px] rounded-xl overflow-hidden">
+          {/* Soon */}
+          <div className="bg-gray-800 w-[400px] h-[330px] rounded-xl overflow-hidden">
             <div className="bg-gray-700 w-full h-[70px] rounded-t-xl flex justify-center items-center">
               <h1 className="font-bold text-xl text-white">Již brzy!</h1>
             </div>
-            <div className="bg-gray-700 w-[90%] h-[75%] mt-3 mb-3 flex justify-center mx-auto rounded-l overflow-y-hidden">
+            <div className="bg-gray-700 w-[90%] h-[65%] mt-3 mb-3 flex justify-center mx-auto rounded-l overflow-y-hidden">
               <div className="w-full h-full gap-y-2 flex flex-col justify-center items-center">
                 <h1 className=" font-bold text-red-600 "> Tuto kategorii pro Vás ještě připravujeme!</h1>
               </div>
