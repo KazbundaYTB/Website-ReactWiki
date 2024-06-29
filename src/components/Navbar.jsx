@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <div className="w-full h-[10%] bg-neutral-800 flex justify-between items-center">
       <div className="pl-4 ml-16">
-        <img src={logo} alt="" />
+        <img src={logo} alt="" href="/"/>
       </div>
       <div className="pr-4 mr-16">
         {windowWidth <= 850 ? (
@@ -54,14 +54,9 @@ export default function Navbar() {
             <li>
               <a href="/">Domov</a>
             </li>
+            
             <li>
-              <a href="/">Minecraft</a>
-            </li>
-            <li>
-              <a href="/">Webhost</a>
-            </li>
-            <li>
-              <a href="/">Databáze</a>
+              <a href="/admin/login" className="px-2 py-2 bg-blue-700 hover:bg-blue-600 rounded-xl">Admin</a>
             </li>
           </ul>
         )}
