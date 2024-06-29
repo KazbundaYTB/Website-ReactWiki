@@ -8,6 +8,7 @@ import {
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "./firebaseConfig";
 import App from "./App";
+import PostPreview from "./components/PostPreview"; // Import PostPreview component
 import "./App.css";
 
 function Posts({ collectionName }) {
@@ -41,7 +42,7 @@ function Posts({ collectionName }) {
     return <div>Post not found</div>;
   }
 
-  return <div>Happy {post.title}</div>;
+  return <PostPreview post={post} />; // Render PostPreview component with fetched post
 }
 
 const router = createBrowserRouter([
@@ -66,3 +67,5 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
 );
+
+export default Posts; // Export Posts component
